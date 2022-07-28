@@ -6,7 +6,8 @@ import { EjemplosPipesComponent } from './ejemplos-pipes/ejemplos-pipes.componen
 
 const routes: Routes = [
   {path: 'pipes', component: EjemplosPipesComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: '**', pathMatch:'full', redirectTo: "pipes"}
 ];
 
 @NgModule({

@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { EjemplosPipesComponent } from './ejemplos-pipes/ejemplos-pipes.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EjemplosPipesComponent } from './ejemplos-pipes/ejemplos-pipes.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
