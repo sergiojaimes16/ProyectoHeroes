@@ -1,0 +1,22 @@
+<h4>Formulario ngModel</h4>
+<hr />
+
+<div class="row justify-align-center">
+    <div class="row form-group">
+        <label class="col-2">Nombre:</label>
+        <div class="col-8">
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="persona.nombre" />
+        </div>
+    </div>
+    <div class="row form-group mt-2">
+        <label class="col-2">Apelido:</label>
+        <div class="col-8">
+            <input type="text" class="form-control" name="apellido" [(ngModel)]="persona.apellido"/>
+        </div>
+    </div>
+    <pre>
+        {{persona | json}}
+    </pre>
+    <button class="btn btn-primary col-md-4 mx-auto mt-4" (click)="guardar()">Guardar</button>
+</div>
+    

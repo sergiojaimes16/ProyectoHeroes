@@ -1,0 +1,32 @@
+<div class="card mt-5">
+    <div class="card-body">
+<form class="container" [formGroup]="form">
+  <h2 class="text-center">Registrarse</h2>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombres</label>
+        <input type="text" formControlName="nombres" class="form-control">
+        <span class="form-text text-danger"
+            *ngIf="campoNoValido('nombres')">
+        Debes colocar nombre y apellido por separado
+      </span>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
+      <input type="email" formControlName="correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <span class="form-text text-danger"
+            *ngIf="campoNoValido('correo')">
+            El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.
+      </span>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+      <span class="form-text text-danger"
+            *ngIf="campoNoValido('password')">
+            La contraseña tiene que ser de 4 a 12 dígitos.
+      </span>
+    </div>
+    <button type="submit" [disabled]="form.invalid" (click)="guardar()" class="btn btn-success">Registrar</button>
+  </form>
+    </div>
+</div>

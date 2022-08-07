@@ -1,0 +1,59 @@
+<h4>Formulario Reactivos</h4>
+<hr />
+
+<form [formGroup]="form">
+<div class="row justify-align-center">
+    <div class="row form-group">
+        <label class="col-2">Nombre:</label>
+        <div class="col-8">
+            <input formControlName="nombre" type="text" class="form-control" name="nombre" />
+        </div>
+    </div>
+    <small *ngIf="usuarioNoValido" class="text-danger">Es Requerido</small>
+    <div class="row form-group mt-2">
+        <label class="col-2">Apelido:</label>
+        <div class="col-8">
+            <input formControlName="apellido" type="text" class="form-control" name="apellido" />
+        </div>
+    </div>
+    <div class="row form-group mt-2">
+        <label class="col-2">Email:</label>
+        <div class="col-8">
+            <input formControlName="email" type="text" class="form-control" name="email" />
+        </div>
+    </div>
+    <div class="row form-group mt-2">
+        <label class="col-2">Contraseña:</label>
+        <div class="col-8">
+            <input formControlName="contrasena" type="password" class="form-control" name="contrasena" />
+        </div>
+    </div>
+    <div class="row form-group mt-2">
+        <label class="col-2">Paises:</label>
+        <div clas="col-8">
+            <select class="form-control" formControlName="pais">
+                <option selected>Seleccione</option>
+                <option value="1">Colombia</option>
+                <option value="2">Brasil</option>
+              </select>
+        </div>
+    </div>
+    <div formGroupName="direccion">
+        <h2>Dirección</h2>
+        <label class="col-2">Calle</label>
+        <div class="col-8">
+            <input formControlName="calle" type="text" class="form-control" name="calle" />
+        </div>
+        <label class="col-2">Avenida</label>
+        <div class="col-8">
+            <input formControlName="avenida" type="text" class="form-control" name="avenida" />
+        </div>
+    </div>
+    <button class="btn btn-primary col-md-4 mx-auto mt-4" (click)="guardar()">Guardar</button>
+    <button class="btn btn-danger col-md-4 mx-auto mt-4" (click)="resetForm()">Limpiar</button>
+
+    <span>
+
+    </span>
+</div>
+</form>    

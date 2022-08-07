@@ -1,2 +1,10 @@
-<button>Login</button>
+<h1>Login o Registro</h1>
+<select [(ngModel)]="seleccionar" class="form-select" aria-label="Default select example">
+    <option selected>Seleccione una opción</option>
+    <option value="1">Login</option>
+    <option value="2">Registrarse</option>
+  </select>
+
+  <app-iniciar-sesion *ngIf="seleccionar == 1"></app-iniciar-sesion>
+  <app-registrar *ngIf="seleccionar == 2"></app-registrar>
 

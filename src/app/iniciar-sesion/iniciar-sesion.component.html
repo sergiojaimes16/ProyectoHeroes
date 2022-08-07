@@ -1,0 +1,26 @@
+<div class="card mt-5">
+    <div class="card-body">
+<form class="container" [formGroup]="form">
+  <h2 class="text-center">Iniciar Sesión</h2>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
+      <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <span class="form-text text-danger"
+            *ngIf="campoNoValido('email')">
+        El correo es obligatorio
+      </span>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <input type="password" formControlName="contrasena" class="form-control" id="exampleInputPassword1">
+      <span class="form-text text-danger"
+            *ngIf="campoNoValido('contrasena')">
+        La contraseña debe tener mas de 8 caracteres
+        La contraseña debe terminar con punto
+      </span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="guardar()">Iniciar sesión</button>
+  </form>
+    </div>
+</div>

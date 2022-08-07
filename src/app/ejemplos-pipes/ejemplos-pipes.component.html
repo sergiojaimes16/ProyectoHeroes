@@ -1,1 +1,86 @@
-<p>Ejemplos pipes</p>
+<h1 class="mt-3">Ejemplos pipes</h1>
+<hr />
+
+<div class="row">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Variables</th>
+                <th>Pipes</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{nombre}}</td>
+                <td>uppercase</td>
+                <td>{{nombre | uppercase}}</td>
+            </tr>
+            <tr>
+                <td>{{nombre}}</td>
+                <td>lowercase</td>
+                <td>{{nombre | lowercase}}</td>
+            </tr>
+            <tr>
+                <td>{{nombre}}</td>
+                <td>slice</td>
+                <td>{{nombre | slice:2}}</td>
+            </tr>
+            <tr>
+                <td>{{PI}}</td>
+                <td>number</td>
+                <td>{{PI | number:'3.0-0'}}</td>
+            </tr>
+            <tr>
+                <td>{{PI}}</td>
+                <td>number</td>
+                <td>{{PI | number:'1.2'}}</td>
+            </tr>
+            <tr>
+                <td>{{porcentaje}}</td>
+                <td>percent</td>
+                <td>{{porcentaje | percent}}</td>
+            </tr>
+            <tr>
+                <td>{{salario}}</td>
+                <td>currency</td>
+                <td>{{salario | currency}}</td>
+            </tr>
+            <tr>
+                <td>{{salario}}</td>
+                <td>currency</td>
+                <td>{{salario | currency:'EUR'}}</td>
+            </tr>
+            <tr>
+                <td>{{fecha}}</td>
+                <td>date</td>
+                <td>{{fecha | date}}</td>
+            </tr>
+            <tr>
+                <td>{{fecha}}</td>
+                <td>date</td>
+                <td>{{fecha | date:'medium'}}</td>
+            </tr>
+            <tr>
+                <td>{{fecha}}</td>
+                <td>date</td>
+                <td>{{fecha | date:'short'}}</td>
+            </tr>
+            <tr>
+                <td>{{nombre}}</td>
+                <td>mayusculas</td>
+                <td>{{nombre | mayusculas}}</td>
+            </tr>
+            <tr>
+                <td>{{limite}}</td>
+                <td>limitString</td>
+                <td>{{limite | limitString:5}}</td>
+            </tr>
+            <tr>
+                <td>Actividad contraseña {{isShow}}</td>
+                <td><button class="btn btn-primary" (click)="mostrar()">Mostrar y ocultar</button></td>
+                <td>{{texto | contrasena:isShow}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
