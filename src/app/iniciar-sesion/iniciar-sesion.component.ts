@@ -21,12 +21,22 @@ export class IniciarSesionComponent implements OnInit {
   buildForm(){
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
-      contrasena: ['', [Validators.required, Validators.minLength(8)]],
+      contrasena: ['', [Validators.required, Validators.minLength(8), this.validarContrasena]],
     });
   }
 
   campoNoValido(campo:string){
     return this.form.get(campo)?.invalid && this.form.get(campo)?.touched;
+  }
+
+  validarContrasena(control: AbstractControl){
+    const contrasena:string = control.value || '';
+    let error = null;
+    if(!contrasena.includes('.')){
+      error = { pesos:'Es requerido el punto'}
+    }
+   
+    return error;
   }
   
 

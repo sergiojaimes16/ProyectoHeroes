@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  seleccionar?: number;
+  seleccionar: number = 0;
   constructor() { }
 
   ngOnInit(): void {
