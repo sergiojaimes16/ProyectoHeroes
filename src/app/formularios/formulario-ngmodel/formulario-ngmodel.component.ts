@@ -8,15 +8,15 @@ import { IPersona } from 'src/app/interfaces/persona.interface';
 })
 export class FormularioNgmodelComponent implements OnInit {
 
-persona:IPersona = {} as IPersona;
+// persona:IPersona = {} as IPersona;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  guardar(){
-    console.log(this.persona);
-  }
+  // guardar(){
+  //   console.log(this.persona);
+  // }
 
 }

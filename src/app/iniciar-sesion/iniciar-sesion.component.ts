@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IPersona } from '../interfaces/persona.interface';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -8,10 +10,12 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 })
 export class IniciarSesionComponent implements OnInit {
 
+  
   form: FormGroup = new FormGroup({});
   emailPattern: string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
   terminarpunto: string = "/^[a-zA=Z]+\\+.{.}$/"
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder,
+              private _serviceLogin: LoginService) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -23,6 +27,12 @@ export class IniciarSesionComponent implements OnInit {
       email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       contrasena: ['', [Validators.required, Validators.minLength(8), this.validarContrasena]],
     });
+  }
+
+  login(){
+    const usuario:IPersona = this.form.value;
+    this._serviceLogin.login(usuario);
+
   }
 
   campoNoValido(campo:string){

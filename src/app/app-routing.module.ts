@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { InformacionComponent } from './components/informacion/informacion.component';
 import { LoginComponent } from './components/login/login.component';
 import { EjemplosPipesComponent } from './ejemplos-pipes/ejemplos-pipes.component';
 import { FormularioNgmodelComponent } from './formularios/formulario-ngmodel/formulario-ngmodel.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'form/ngmodel', component: FormularioNgmodelComponent},
   {path: 'form/reactivo', component: FormularioReactivosComponent},
+  {path: 'informacion', component: InformacionComponent},
   {path: '**', pathMatch:'full', redirectTo: "pipes"}
 ];
 

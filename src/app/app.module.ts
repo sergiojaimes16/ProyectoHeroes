@@ -17,6 +17,8 @@ import { FormularioReactivosComponent } from './formularios/formulario-reactivos
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { RegistrarComponent } from './registrar/registrar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { InformacionComponent } from './components/informacion/informacion.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +34,16 @@ import { RegistrarComponent } from './registrar/registrar.component';
     FormularioNgmodelComponent,
     FormularioReactivosComponent,
     IniciarSesionComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    InformacionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

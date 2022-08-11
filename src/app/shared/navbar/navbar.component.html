@@ -18,11 +18,20 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="form/reactivo">Formulario Reactivo</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="informacion">Información</a>
+          </li>
+          <div>
+            {{ nombreUsuario }}
+          </div>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <div>
+          <button (click)="logout()" class="btn btn-danger">Logout</button>
+        </div>
       </div>
     </div>
   </nav>
