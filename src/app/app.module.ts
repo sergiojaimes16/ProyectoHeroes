@@ -19,6 +19,7 @@ import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.componen
 import { RegistrarComponent } from './registrar/registrar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InformacionComponent } from './components/informacion/informacion.component';
+import { HeoresModule } from './heores/heores.module';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { InformacionComponent } from './components/informacion/informacion.compo
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HeoresModule
   ],
   providers: [],
   bootstrap: [AppComponent]

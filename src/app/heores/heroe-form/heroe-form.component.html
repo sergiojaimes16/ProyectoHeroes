@@ -1,7 +1,52 @@
-<p>heroe-form works!</p>
-Crearse un formulario reactivo con la siguiente estructura
+<div class="card mt-5">
+    <div class="card-body">
+<form class="container" [formGroup]="form">
+  <h2 class="text-center">Heroes</h2>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <!-- <span class="form-text text-danger"
+            *ngIf="campoNoValido('email')">
+        El correo es obligatorio
+      </span> -->
+    </div>
+    <div class="mb-3">
+        <div class="form-group purple-border">
+            <label for="exampleFormControlTextarea4">Descripción</label>
+            <textarea formControlName="descripcion" class="form-control" id="exampleFormControlTextarea4" rows="3"></textarea>
+          </div>
+    </div>
+    <div class="mb-3" >
+        <h2>Imagen</h2>
+    <select formControlName="imagen" class="form-select" aria-label="Default select example">
+        <option value="0" selected>Seleccione una opción</option>
+        <option *ngFor="let imagen of imagenes"   value="1">{{imagen}}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Aparición</label>
+        <input type="text" formControlName="aparicion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <!-- <span class="form-text text-danger"
+              *ngIf="campoNoValido('email')">
+          El correo es obligatorio
+        </span> -->
+      </div>
+      <div class="mb-3">
+        <h2>Casa</h2>
+        <select formControlName="casa" class="form-select" aria-label="Default select example">
+            <option value="0" selected>Seleccione una opción</option>
+            <option value="1">Marvel</option>
+            <option value="2">DC</option>
+          </select>
+        </div>
+    
+    <button type="submit" class="btn btn-primary"  >Agregar Heroe</button>
+  </form>
+    </div>
+</div>
+<!-- Crearse un formulario reactivo con la siguiente estructura
 nombre - input
 descripcion - textarea
 img - select - opciones depende de un array - con los nombres de las imagenes
 aparicion - input
-casa - select - opciones son Marvel y DC
+casa - select - opciones son Marvel y DC -->
