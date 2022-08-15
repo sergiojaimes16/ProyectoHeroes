@@ -5,42 +5,54 @@
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Nombre</label>
       <input type="text" formControlName="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <!-- <span class="form-text text-danger"
-            *ngIf="campoNoValido('email')">
-        El correo es obligatorio
-      </span> -->
+      <span class="form-text text-danger"
+            *ngIf="campoNoValido('nombre')">
+        El nombre es obligatorio
+      </span>
     </div>
     <div class="mb-3">
         <div class="form-group purple-border">
             <label for="exampleFormControlTextarea4">Descripción</label>
-            <textarea formControlName="descripcion" class="form-control" id="exampleFormControlTextarea4" rows="3"></textarea>
+            <textarea formControlName="descripcion"  class="form-control" id="exampleFormControlTextarea4" rows="3"></textarea>
+            <span class="form-text text-danger"
+            *ngIf="campoNoValido('descripcion')">
+              La descripción debe tener mas de 8 caracteres
+            </span>
           </div>
     </div>
     <div class="mb-3" >
         <h2>Imagen</h2>
     <select formControlName="imagen" class="form-select" aria-label="Default select example">
         <option value="0" selected>Seleccione una opción</option>
-        <option *ngFor="let imagen of imagenes"   value="1">{{imagen}}</option>
+        <option *ngFor="let imagen of imagenes"  [value]="imagen.url">{{imagen.url}}</option>
       </select>
+      <span class="form-text text-danger"
+            *ngIf="campoNoValido('imagen')">
+              Debes seleccionar al menos un campo
+            </span>
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Aparición</label>
         <input type="text" formControlName="aparicion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <!-- <span class="form-text text-danger"
-              *ngIf="campoNoValido('email')">
-          El correo es obligatorio
-        </span> -->
+        <span class="form-text text-danger"
+              *ngIf="campoNoValido('aparicion')">
+          La aparición es obligatoria
+        </span>
       </div>
       <div class="mb-3">
         <h2>Casa</h2>
         <select formControlName="casa" class="form-select" aria-label="Default select example">
             <option value="0" selected>Seleccione una opción</option>
-            <option value="1">Marvel</option>
-            <option value="2">DC</option>
+            <option value="Marvel">Marvel</option>
+            <option value="DC">DC</option>
           </select>
+          <span class="form-text text-danger"
+              *ngIf="campoNoValido('casa')">
+          La casa debe de estar seleccionada
+        </span>
         </div>
     
-    <button type="submit" class="btn btn-primary"  >Agregar Heroe</button>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="guardar()" >Agregar Heroe</button>
   </form>
     </div>
 </div>

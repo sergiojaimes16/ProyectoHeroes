@@ -5,7 +5,7 @@ import { HeoresRoutingModule } from './heores-routing.module';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroeTarjetaComponent } from './heroe-tarjeta/heroe-tarjeta.component';
 import { HeroeFormComponent } from './heroe-form/heroe-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HeoresRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports : [
     HeroeFormComponent
