@@ -15,7 +15,7 @@ export class HeroesService {
     aparicion: "Año 1990",
     casa: "Marvel"
   }]
-  private heroes$: Subject<IHeroe[]>;
+  heroes$: Subject<IHeroe[]>;
 
   constructor() { 
     this.heroes$ = new Subject();

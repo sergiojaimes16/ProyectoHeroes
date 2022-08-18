@@ -1,6 +1,6 @@
 <app-heroe-form></app-heroe-form>
 
-<div class="container">
+<!-- <div class="container">
     <div *ngFor="let heroe of arrHeroes">
         <h3>Nombre: <strong>{{heroe.nombre}}</strong></h3>
         <p>Descripción: <strong>{{heroe.descripcion}}</strong></p>
@@ -8,4 +8,6 @@
         <p>Aparición: <strong>{{heroe.aparicion}}</strong></p>
         <p>Casa: <strong>{{heroe.casa}}</strong></p>
     </div>
-</div>
+</div> -->
+
+<app-heroe-tarjeta [heroe]="heroe" *ngFor="let heroe of arrHeroes"></app-heroe-tarjeta>
