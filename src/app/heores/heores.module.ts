@@ -6,13 +6,15 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroeTarjetaComponent } from './heroe-tarjeta/heroe-tarjeta.component';
 import { HeroeFormComponent } from './heroe-form/heroe-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeroeComponent } from './heroe/heroe.component';
 
 
 @NgModule({
   declarations: [
     HeroesComponent,
     HeroeTarjetaComponent,
-    HeroeFormComponent
+    HeroeFormComponent,
+    HeroeComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule
   ],
   exports : [
-    HeroeFormComponent
+    HeroeFormComponent,
+    HeroeComponent
   ]
 })
 export class HeoresModule { }
