@@ -14,6 +14,13 @@ export class HeroesService {
     imagen: "assets/img/daredevil.png",
     aparicion: "Año 1990",
     casa: "Marvel"
+  },
+  {
+    nombre: "Batman",
+    descripcion: "Soy un heroe de DC",
+    imagen: "assets/img/batman.png",
+    aparicion: "Año 2000",
+    casa: "DC"
   }]
   heroes$: Subject<IHeroe[]>;
 
